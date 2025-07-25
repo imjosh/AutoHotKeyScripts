@@ -6,10 +6,10 @@
 
 #Requires AutoHotkey v2
 
-slotCount := 5
+slotCount := 9
 global windowIDs := Map()
 
-; Map Win+[1-5] to jump to a window, set by Win+Alt+[1-5]
+; Map Win+[1-9] to jump to a window, set by Win+Alt+[1-9]
 Loop slotCount {
     idx := A_Index
     Hotkey("#!" idx, AssignWindowToSlot.Bind(idx))

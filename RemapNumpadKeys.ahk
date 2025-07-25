@@ -22,19 +22,25 @@ NumpadSub::Send("^x")
 ; Remap numpad_add to send Ctrl+A
 NumpadAdd::Send("^a")
 
-; Remap launchapp2 to open https://chatgpt.com in a new Chrome tab
+; launchapp2 to open ChatGPT using the 4o model
 Launch_App2::
 {
-    Run("chrome.exe --new-tab https://chatgpt.com")
+    Run("chrome.exe --new-tab https://chatgpt.com/?model=gpt-4o")
 }
 
+; Ctrl+Launch_App2 to open ChatGPT using the GPT-4.1 model
+^Launch_App2::
+{
+  Run("chrome.exe --new-tab https://chatgpt.com/?model=gpt-4-1")
+}
+
+; NumpadIns (#0) to hold down ctrl+shift
 NumpadIns::
 {
     Send("{Ctrl Down}{Shift Down}")
     KeyWait("Insert") ; Wait for Insert to be released
     Send("{Ctrl Up}{Shift Up}")
 }
-
 
 ; Remap numpad clear (the #5 key) to delete line in cursor and vscode
 #HotIf WinActive("ahk_exe Code.exe")
@@ -45,6 +51,12 @@ NumpadClear::Send("^+k") ; VS Code: delete line
 NumpadClear::Send("^+!d") ; Cursor: delete line with Ctrl+Shift+Alt+D
 #HotIf
 
+; Make Ctrl+W close the current tab in SSMS (type ctrl+f4)
+#HotIf WinActive("SQL Server Management Studio")
+^w::{
+  Send("^{F4}")
+}
+#HotIf
 
 ; numpad enter = undo (ctrl-z)
 NumpadEnter::Send("^z")
@@ -55,5 +67,3 @@ NumpadUp::Send("+{Up}")
 NumpadDown::Send("+{Down}")
 
 ;NumpadDel::Send("NumpadDel")
-
-
