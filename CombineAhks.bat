@@ -26,8 +26,8 @@ echo.
 echo #SingleInstance Force >> %OUTPUT_FILE%
 echo. >> %OUTPUT_FILE%
 
-:: Loop through all .ahk files in the script directory and concatenate them
-for %%F in ("%SCRIPT_DIR%*.ahk") do (
+:: Loop through all .ahk files in the scripts directory and concatenate them
+for %%F in ("%SCRIPT_DIR%scripts\*.ahk") do (
   if exist "%%~F" (
     echo Adding %%~nxF...
     echo ; ========================================== >> "%OUTPUT_FILE%"
