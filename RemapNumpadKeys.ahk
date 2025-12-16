@@ -22,16 +22,16 @@ NumpadSub::Send("^x")
 ; Remap numpad_add to send Ctrl+A
 NumpadAdd::Send("^a")
 
-; launchapp2 to open ChatGPT using the 4o model
+; launchapp2 to open ChatGPT using the ChatGPT 5.2-Auto Model
 Launch_App2::
 {
-    Run("chrome.exe --new-tab https://chatgpt.com/?model=gpt-4o")
+    Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941788c3b5c8191b87b4a6e6e9f532c-5-2-auto")
 }
 
-; Ctrl+Launch_App2 to open ChatGPT using the GPT-4.1 model
+; Ctrl+Launch_App2 to open ChatGPT using the 5.2-Thinking Model
 ^Launch_App2::
 {
-  Run("chrome.exe --new-tab https://chatgpt.com/?model=gpt-4-1")
+  Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941777f48ac819190d9eeee294b43a9-thinking")
 }
 
 ; NumpadIns (#0) to hold down ctrl+shift
