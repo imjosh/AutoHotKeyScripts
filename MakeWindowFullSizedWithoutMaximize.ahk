@@ -1,4 +1,4 @@
-﻿; AHKv2
+; AHKv2
 
 ^!f:: { ; CTRL-ALT-F
     hwnd := WinGetID("A")

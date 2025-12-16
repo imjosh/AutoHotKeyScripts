@@ -22,13 +22,13 @@ NumpadSub::Send("^x")
 ; Remap numpad_add to send Ctrl+A
 NumpadAdd::Send("^a")
 
-; launchapp2 to open ChatGPT using the ChatGPT 5.2-Auto Model
+; launchapp2 to open ChatGPT using the ChatGPT 5.2-Auto Model (via private, custom GPT)
 Launch_App2::
 {
     Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941788c3b5c8191b87b4a6e6e9f532c-5-2-auto")
 }
 
-; Ctrl+Launch_App2 to open ChatGPT using the 5.2-Thinking Model
+; Ctrl+Launch_App2 to open ChatGPT using the 5.2-Thinking Model (via private, custom GPT)
 ^Launch_App2::
 {
   Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941777f48ac819190d9eeee294b43a9-thinking")
@@ -61,9 +61,8 @@ NumpadClear::Send("^+!d") ; Cursor: delete line with Ctrl+Shift+Alt+D
 ; numpad enter = undo (ctrl-z)
 NumpadEnter::Send("^z")
 
+; numpad arrows = ctrl+arrow keys
 NumpadLeft::Send("^+{Left}")
 NumpadRight::Send("^+{Right}")
 NumpadUp::Send("+{Up}")
 NumpadDown::Send("+{Down}")
-
-;NumpadDel::Send("NumpadDel")
