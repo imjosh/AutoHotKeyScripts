@@ -1,14 +1,14 @@
 ; AHKv2
 
-; fixme todo - instead of using NumpadIns (0) to just be ctrl+shift, can I use it like a "hyperkey":
-;  NumpadIns+p = ctrl+shift+p
-;  NumpadIns+up = ctrl+alt+up ; multi-cursor select
-;  NumpadIns+down = ctrl+alt+down ; multi-cursor select
+; fixme todo - instead of using NumpadIns (0) to just be Ctrl+Shift, can I use it like a "hyperkey", e.g.:
+;  NumpadIns+p = Ctrl+Shift+Up
+;  NumpadIns+Up = Ctrl+Alt+Up ; multi-cursor select
+;  NumpadIns+Down = Ctrl+Alt+Down ; multi-cursor select
 ;  NumpadIns+Launch_App2 = open Gemini AI
 ;
 ; Can I map a mouse key to the 0+numpad key? regardless, I can ahk the button to the same set of shortcuts
-; See if the CE and +/- keys can actually be distinguished from delete and f9 -> most probably not according to reddit
-; but, could do NumpadIns+f9 = whatever I want, and NumpadIns+delete = whatever I want
+; See if the CE and +/- keys can actually be distinguished from delete and F9 -> most probably not according to reddit
+; but, could do NumpadIns+F9 = whatever I want, and NumpadIns+delete = whatever I want
 
 ; Remap numpad_multiply to send Ctrl+C
 NumpadMult::Send("^c")
@@ -34,7 +34,7 @@ Launch_App2::
   Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941777f48ac819190d9eeee294b43a9-thinking")
 }
 
-; NumpadIns (#0) to hold down ctrl+shift
+; NumpadIns (#0) to hold down Ctrl+Shift
 NumpadIns::
 {
     Send("{Ctrl Down}{Shift Down}")
@@ -51,17 +51,17 @@ NumpadClear::Send("^+k") ; VS Code: delete line
 NumpadClear::Send("^+!d") ; Cursor: delete line with Ctrl+Shift+Alt+D
 #HotIf
 
-; Make Ctrl+W close the current tab in SSMS (type ctrl+f4)
+; Make Ctrl+W close the current tab in SSMS (type Ctrl+F4)
 #HotIf WinActive("SQL Server Management Studio")
 ^w::{
   Send("^{F4}")
 }
 #HotIf
 
-; numpad enter = undo (ctrl-z)
+; numpad enter = undo (Ctrl-z)
 NumpadEnter::Send("^z")
 
-; numpad arrows = ctrl+arrow keys
+; numpad arrows = Ctrl+Shift+arrow keys
 NumpadLeft::Send("^+{Left}")
 NumpadRight::Send("^+{Right}")
 NumpadUp::Send("+{Up}")
