@@ -22,17 +22,18 @@ NumpadSub::Send("^x")
 ; Remap numpad_add to send Ctrl+A
 NumpadAdd::Send("^a")
 
-; launchapp2 to open ChatGPT using the ChatGPT 5.2-Auto Model (via private, custom GPT)
+; launchapp2 to open ChatGPT
 Launch_App2::
 {
-    Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941788c3b5c8191b87b4a6e6e9f532c-5-2-auto")
+    Run("chrome.exe --new-tab https://chatgpt.com")
 }
 
-; Ctrl+Launch_App2 to open ChatGPT using the 5.2-Thinking Model (via private, custom GPT)
-^Launch_App2::
-{
-  Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941777f48ac819190d9eeee294b43a9-thinking")
-}
+; ; Ctrl+Launch_App2 to open ChatGPT using the 5.2-Thinking Model (via private, custom GPT)
+; ; NOTE: disabled because custom GPT sessions cannot be added to projects
+; ^Launch_App2::
+; {
+;   Run("chrome.exe --new-tab https://chatgpt.com/g/g-6941777f48ac819190d9eeee294b43a9-thinking")
+; }
 
 ; NumpadIns (#0) to hold down Ctrl+Shift
 NumpadIns::
