@@ -1,4 +1,14 @@
 ; AHKv2
+; fixme todo
+; maps caps+ to super+ but keep caps functional when pressed by itself
+; map super+[1-9] to applications that typically have only one window open - access, SSMS, github, excel? word?
+; map super+
+; :U PGDWN,
+; :O PGUP
+; :I UP
+; :J LEFT
+; :K DOWN
+; :L RIGHT
 
 ; fixme todo - instead of using NumpadIns (0) to just be Ctrl+Shift, can I use it like a "hyperkey", e.g.:
 ;  NumpadIns+p = Ctrl+Shift+Up
