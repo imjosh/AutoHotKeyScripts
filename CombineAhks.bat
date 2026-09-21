@@ -23,8 +23,12 @@ echo    %OUTPUT_FILE%...
 echo.
 
 
-echo #SingleInstance Force >> %OUTPUT_FILE%
-echo. >> %OUTPUT_FILE%
+:: Shared startup settings must precede all concatenated scripts.
+echo #Requires AutoHotkey v2 >> "%OUTPUT_FILE%"
+echo #SingleInstance Force >> "%OUTPUT_FILE%"
+echo ; Avoid synthetic Ctrl triggering Wispr Flow's Ctrl+Win shortcut. >> "%OUTPUT_FILE%"
+echo A_MenuMaskKey := "vkE8" >> "%OUTPUT_FILE%"
+echo. >> "%OUTPUT_FILE%"
 
 :: Loop through all .ahk files in the scripts directory and concatenate them
 for %%F in ("%SCRIPT_DIR%scripts\*.ahk") do (
